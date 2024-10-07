@@ -2,16 +2,12 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.sqlDelightPlugin)
 }
 
 kotlin {
-    androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
-        }
-    }
+    androidTarget()
     iosX64()
     iosArm64()
     iosSimulatorArm64()
@@ -27,25 +23,47 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            implementation(libs.ktor.core)
+            implementation(libs.ktor.serialization)
+            implementation(libs.ktor.serializationJson)
+            implementation(libs.sqlDelight.runtime)
+            implementation(libs.sqlDelight.coroutinesExtensions)
+            implementation(libs.dateTime)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(libs.assertK)
+            implementation(libs.turbine)
+        }
+        androidMain.dependencies {
+            implementation(libs.ktor.android)
+            implementation(libs.sqlDelight.androidDriver)
+        }
+        iosMain.dependencies {
+//            implementation(libs.ktor.iOS)
+            implementation(libs.sqlDelight.nativeDriver)
         }
     }
 }
 
 android {
     namespace = "com.bakhur.translator"
-    compileSdk = 34
+    compileSdk = 35
     defaultConfig {
         minSdk = 28
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
+
+//sqldelight {
+//    database("NoteDatabase") {
+//        packageName = "com.bakhur.translator.database"
+//        sourceFolders = listOf("sqldelight")
+//    }
+//}
