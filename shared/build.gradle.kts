@@ -3,10 +3,12 @@ plugins {
     alias(libs.plugins.kotlinCocoapods)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.sqlDelightPlugin)
+    alias(libs.plugins.sqlDelight)
 }
 
 kotlin {
+    tasks.create("testClasses")
+
     androidTarget()
     iosX64()
     iosArm64()
@@ -26,11 +28,9 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.ktor.core)
-            implementation(libs.ktor.serialization)
-            implementation(libs.ktor.serializationJson)
+            implementation(libs.bundles.ktor)
             implementation(libs.sqlDelight.runtime)
-            implementation(libs.sqlDelight.coroutinesExtensions)
+            implementation(libs.sqlDelight.coroutines.extensions)
             implementation(libs.dateTime)
         }
         commonTest.dependencies {
@@ -39,11 +39,11 @@ kotlin {
             implementation(libs.turbine)
         }
         androidMain.dependencies {
-            implementation(libs.ktor.android)
+            implementation(libs.ktor.client.android)
             implementation(libs.sqlDelight.androidDriver)
         }
         iosMain.dependencies {
-//            implementation(libs.ktor.iOS)
+            implementation(libs.ktor.client.ios)
             implementation(libs.sqlDelight.nativeDriver)
         }
     }
@@ -61,9 +61,10 @@ android {
     }
 }
 
-//sqldelight {
-//    database("NoteDatabase") {
-//        packageName = "com.bakhur.translator.database"
-//        sourceFolders = listOf("sqldelight")
-//    }
-//}
+sqldelight {
+    databases {
+        create("TranslateDatabase") {
+            packageName.set("com.bakhur.translator.database")
+        }
+    }
+}

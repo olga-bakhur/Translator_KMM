@@ -1,9 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
-//    alias(libs.plugins.sqlDelightPlugin)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 }
@@ -17,12 +15,14 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "com.bakhur.translator.TestHiltRunner"
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.toString()
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
     packaging {
         resources {
@@ -45,29 +45,31 @@ android {
 
 dependencies {
     implementation(projects.shared)
-    implementation(libs.compose.ui)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.material3)
-    implementation(libs.androidx.activity.compose)
-    debugImplementation(libs.compose.ui.tooling)
 
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.compose.ui)
+    debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.foundation)
+    implementation(libs.compose.material3)
     implementation(libs.compose.icons.extended)
+    implementation(libs.androidx.activity.compose)
     implementation(libs.compose.navigation)
-    implementation(libs.coil)
+    implementation(libs.coil.compose)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.androidCompiler)
-    ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
-    implementation(libs.ktor.android)
+    implementation(libs.ktor.client.android)
 
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.testRunner)
+    androidTestImplementation(libs.test.rule)
     androidTestImplementation(libs.jUnit)
-    androidTestImplementation(libs.compose.testing)
+    androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.compose.test.manifest)
+    androidTestImplementation(libs.hilt.android.testing)
 
     kspAndroidTest(libs.hilt.androidCompiler)
-    androidTestImplementation(libs.hilt.testing)
 }
