@@ -9,28 +9,28 @@ actual open class CommonMutableStateFlow<T> actual constructor(
     private val flow: MutableStateFlow<T>
 ) : CommonStateFlow<T>(flow), MutableStateFlow<T> {
 
-    override val subscriptionCount: StateFlow<Int>
+    actual override val subscriptionCount: StateFlow<Int>
         get() = flow.subscriptionCount
 
-    override val replayCache: List<T>
+    actual override val replayCache: List<T>
         get() = flow.replayCache
 
-    override var value: T
+    actual override var value: T
         get() = super.value
         set(value) {
             flow.value = value
         }
 
-    override suspend fun collect(collector: FlowCollector<T>): Nothing =
+    actual override suspend fun collect(collector: FlowCollector<T>): Nothing =
         flow.collect(collector)
 
-    override fun compareAndSet(expect: T, update: T): Boolean =
+    actual override fun compareAndSet(expect: T, update: T): Boolean =
         flow.compareAndSet(expect, update)
 
-    override suspend fun emit(value: T) = flow.emit(value)
+    actual override suspend fun emit(value: T) = flow.emit(value)
 
     @ExperimentalCoroutinesApi
-    override fun resetReplayCache() = flow.resetReplayCache()
+    actual override fun resetReplayCache() = flow.resetReplayCache()
 
-    override fun tryEmit(value: T): Boolean = flow.tryEmit(value)
+    actual override fun tryEmit(value: T): Boolean = flow.tryEmit(value)
 }

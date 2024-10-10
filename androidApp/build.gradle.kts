@@ -24,7 +24,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+        kotlinCompilerExtensionVersion = libs.versions.compose.toString()
     }
     packaging {
         resources {
@@ -53,6 +53,7 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.foundation)
+    implementation(libs.compose.runtime)
     implementation(libs.compose.material3)
     implementation(libs.compose.icons.extended)
     implementation(libs.androidx.activity.compose)

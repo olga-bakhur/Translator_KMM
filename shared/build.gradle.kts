@@ -41,6 +41,7 @@ kotlin {
             implementation(libs.turbine)
         }
         androidMain.dependencies {
+            implementation(libs.compose.runtime)
             implementation(libs.ktor.client.android)
             implementation(libs.sqlDelight.androidDriver)
         }
