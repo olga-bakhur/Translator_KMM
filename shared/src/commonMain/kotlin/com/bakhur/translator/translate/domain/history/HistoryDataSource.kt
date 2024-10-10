@@ -1,10 +1,11 @@
 package com.bakhur.translator.translate.domain.history
 
 import com.bakhur.translator.core.domain.util.CommonFlow
+import kotlin.coroutines.CoroutineContext
 
 interface HistoryDataSource {
 
-    fun getHistory(): CommonFlow<List<HistoryItem>>
+    fun getHistory(context: CoroutineContext): CommonFlow<List<HistoryItem>>
 
-    suspend fun insertHistoryItem(item: HistoryItem)
+    suspend fun insertHistoryItem(historyItem: HistoryItem)
 }
