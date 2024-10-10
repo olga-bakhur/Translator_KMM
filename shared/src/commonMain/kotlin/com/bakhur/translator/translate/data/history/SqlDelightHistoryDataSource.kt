@@ -17,7 +17,6 @@ class SqlDelightHistoryDataSource(
 
     private val queries = db.translateQueries
 
-    // context to pass: viewModelScope.coroutineContext
     override fun getHistory(context: CoroutineContext): CommonFlow<List<HistoryItem>> =
         queries.getHistory()
             .asFlow()

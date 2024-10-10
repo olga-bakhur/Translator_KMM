@@ -63,6 +63,11 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
+// TODO: Those dependencies are added to the ::AndroidApp gradle file and must be visible from there
+dependencies {
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.lifecycle.viewmodel.android)
+}
 
 sqldelight {
     databases {

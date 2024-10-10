@@ -60,6 +60,8 @@ dependencies {
     implementation(libs.compose.navigation)
     implementation(libs.coil.compose)
 
+    implementation(libs.androidx.lifecycle.viewmodel.android)
+
     implementation(libs.hilt.android)
     ksp(libs.hilt.androidCompiler)
     implementation(libs.hilt.navigation.compose)
