@@ -38,8 +38,13 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideHistoryDataSource(driver: SqlDriver): HistoryDataSource =
-        SqlDelightHistoryDataSource(TranslateDatabase(driver))
+    fun provideTranslateDatabase(driver: SqlDriver): TranslateDatabase =
+        TranslateDatabase(driver)
+
+    @Provides
+    @Singleton
+    fun provideHistoryDataSource(database: TranslateDatabase): HistoryDataSource =
+        SqlDelightHistoryDataSource(database)
 
     @Provides
     @Singleton

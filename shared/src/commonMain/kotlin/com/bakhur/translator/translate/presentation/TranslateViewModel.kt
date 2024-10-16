@@ -4,7 +4,7 @@ import com.bakhur.translator.EMPTY
 import com.bakhur.translator.core.domain.util.Resource
 import com.bakhur.translator.core.domain.util.toCommonStateFlow
 import com.bakhur.translator.core.presentation.UiLanguage
-import com.bakhur.translator.translate.data.history.SqlDelightHistoryDataSource
+import com.bakhur.translator.translate.domain.history.HistoryDataSource
 import com.bakhur.translator.translate.domain.translate.TranslateException
 import com.bakhur.translator.translate.domain.translate.TranslateUseCase
 import kotlinx.coroutines.CoroutineScope
@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 
 class TranslateViewModel(
     private val translateUseCase: TranslateUseCase,
-    private val historyDataSource: SqlDelightHistoryDataSource,
+    private val historyDataSource: HistoryDataSource,
     private val coroutineScope: CoroutineScope?
 ) {
 

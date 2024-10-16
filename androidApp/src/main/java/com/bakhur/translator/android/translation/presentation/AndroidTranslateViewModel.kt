@@ -2,7 +2,7 @@ package com.bakhur.translator.android.translation.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bakhur.translator.translate.data.history.SqlDelightHistoryDataSource
+import com.bakhur.translator.translate.domain.history.HistoryDataSource
 import com.bakhur.translator.translate.domain.translate.TranslateUseCase
 import com.bakhur.translator.translate.presentation.TranslateEvent
 import com.bakhur.translator.translate.presentation.TranslateViewModel
@@ -12,7 +12,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AndroidTranslateViewModel @Inject constructor(
     private val translateUseCase: TranslateUseCase,
-    private val historyDataSource: SqlDelightHistoryDataSource
+    private val historyDataSource: HistoryDataSource
 ) : ViewModel() {
 
     private val viewModel by lazy {
