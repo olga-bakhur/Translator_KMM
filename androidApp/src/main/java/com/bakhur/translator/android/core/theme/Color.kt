@@ -1,4 +1,4 @@
-package com.bakhur.translator.presentation.theme
+package com.bakhur.translator.android.core.theme
 
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme

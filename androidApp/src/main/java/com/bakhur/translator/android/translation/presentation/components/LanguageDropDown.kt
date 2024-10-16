@@ -1,4 +1,4 @@
-package com.bakhur.translator.presentation.components
+package com.bakhur.translator.android.translation.presentation.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.bakhur.translator.android.R
 import com.bakhur.translator.core.presentation.UiLanguage
-import com.bakhur.translator.presentation.theme.LightBlue
+import com.bakhur.translator.android.core.theme.LightBlue
 
 @Composable
 fun LanguageDropDown(

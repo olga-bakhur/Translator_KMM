@@ -1,4 +1,4 @@
-package com.bakhur.translator.presentation.components
+package com.bakhur.translator.android.translation.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.shape.CircleShape

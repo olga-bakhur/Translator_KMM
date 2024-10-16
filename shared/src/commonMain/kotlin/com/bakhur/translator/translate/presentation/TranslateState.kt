@@ -1,6 +1,6 @@
 package com.bakhur.translator.translate.presentation
 
-import com.bakhur.translator.core.EMPTY
+import com.bakhur.translator.EMPTY
 import com.bakhur.translator.core.presentation.UiLanguage
 import com.bakhur.translator.translate.domain.translate.TranslateError
 

@@ -1,4 +1,4 @@
-package com.bakhur.translator.presentation.components
+package com.bakhur.translator.android.translation.presentation.components
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size

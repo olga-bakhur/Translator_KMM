@@ -1,4 +1,4 @@
-package com.bakhur.translator.presentation
+package com.bakhur.translator.android.translation.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -13,9 +13,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bakhur.translator.android.TranslatorTheme
-import com.bakhur.translator.presentation.components.LanguageDropDown
-import com.bakhur.translator.presentation.components.SwapLanguagesButton
+import com.bakhur.translator.android.core.theme.TranslatorTheme
+import com.bakhur.translator.android.translation.presentation.components.LanguageDropDown
+import com.bakhur.translator.android.translation.presentation.components.SwapLanguagesButton
 import com.bakhur.translator.translate.presentation.TranslateEvent
 import com.bakhur.translator.translate.presentation.TranslateState
 

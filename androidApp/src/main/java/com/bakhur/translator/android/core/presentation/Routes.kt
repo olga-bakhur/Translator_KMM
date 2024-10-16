@@ -1,4 +1,4 @@
-package com.bakhur.translator.android.core
+package com.bakhur.translator.android.core.presentation
 
 object Routes {
 
