@@ -9,6 +9,7 @@ import com.bakhur.translator.translate.domain.translate.TranslateException
 import com.bakhur.translator.translate.domain.translate.TranslateUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -17,6 +18,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.flow.updateAndGet
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class TranslateViewModel(
     private val translateUseCase: TranslateUseCase,
@@ -190,29 +192,30 @@ class TranslateViewModel(
                 )
             }
 
-            // TODO: switch to DispatcherIO?
-            val result = translateUseCase.execute(
-                fromLanguage = state.fromLanguage.language,
-                toLanguage = state.toLanguage.language,
-                fromText = state.fromText
-            )
+            withContext(Dispatchers.IO) {
+                val result = translateUseCase.execute(
+                    fromLanguage = state.fromLanguage.language,
+                    toLanguage = state.toLanguage.language,
+                    fromText = state.fromText
+                )
 
-            when (result) {
-                is Resource.Success -> {
-                    _state.update {
-                        it.copy(
-                            isTranslating = false,
-                            toText = result.data
-                        )
+                when (result) {
+                    is Resource.Success -> {
+                        _state.update {
+                            it.copy(
+                                isTranslating = false,
+                                toText = result.data
+                            )
+                        }
                     }
-                }
 
-                is Resource.Error -> {
-                    _state.update {
-                        it.copy(
-                            isTranslating = false,
-                            error = (result.throwable as? TranslateException)?.error
-                        )
+                    is Resource.Error -> {
+                        _state.update {
+                            it.copy(
+                                isTranslating = false,
+                                error = (result.throwable as? TranslateException)?.error
+                            )
+                        }
                     }
                 }
             }
