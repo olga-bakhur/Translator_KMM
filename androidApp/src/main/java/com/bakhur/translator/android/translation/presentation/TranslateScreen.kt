@@ -1,5 +1,6 @@
 package com.bakhur.translator.android.translation.presentation
 
+import android.speech.tts.TextToSpeech
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -23,8 +24,10 @@ import com.bakhur.translator.android.core.theme.TranslatorTheme
 import com.bakhur.translator.android.translation.presentation.components.LanguageDropDown
 import com.bakhur.translator.android.translation.presentation.components.SwapLanguagesButton
 import com.bakhur.translator.android.translation.presentation.components.TranslateTextField
+import com.bakhur.translator.android.translation.presentation.components.rememberTextToSpeech
 import com.bakhur.translator.translate.presentation.TranslateEvent
 import com.bakhur.translator.translate.presentation.TranslateState
+import java.util.Locale
 
 @Composable
 fun TranslateScreen(
@@ -94,6 +97,7 @@ fun TranslateScreen(
             item {
                 val clipboardManager = LocalClipboardManager.current
                 val keyboardController = LocalSoftwareKeyboardController.current
+                val tts = rememberTextToSpeech()
 
                 TranslateTextField(
                     modifier = Modifier.fillMaxWidth(),
@@ -125,7 +129,13 @@ fun TranslateScreen(
                         onEvent(TranslateEvent.CloseTranslation)
                     },
                     onSpeakerClick = {
-                        // TODO
+                        tts.language = state.toLanguage.toLacale() ?: Locale.ENGLISH
+                        tts.speak(
+                            state.toText,
+                            TextToSpeech.QUEUE_FLUSH,
+                            null,
+                            null
+                        )
                     },
                     onTextFieldClick = {
                         onEvent(TranslateEvent.EditTranslation)
