@@ -31,6 +31,9 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.bundles.ktor)
+            implementation(libs.ktor.logging)
+            implementation(libs.slf4j.api)
+            implementation(libs.slf4j.simple)
             implementation(libs.sqlDelight.runtime)
             implementation(libs.sqlDelight.coroutines.extensions)
             implementation(libs.dateTime)
@@ -43,6 +46,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.runtime)
             implementation(libs.ktor.client.android)
+            implementation(libs.slf4j.android)
             implementation(libs.sqlDelight.androidDriver)
         }
         iosMain.dependencies {
