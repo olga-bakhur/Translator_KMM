@@ -1,7 +1,7 @@
 package com.bakhur.translator.translate.data.translate
 
-import com.bakhur.translator.NetworkConstants
 import com.bakhur.translator.core.domain.language.Language
+import com.bakhur.translator.translate.NetworkConstants
 import com.bakhur.translator.translate.domain.translate.TranslateClient
 import com.bakhur.translator.translate.domain.translate.TranslateError
 import com.bakhur.translator.translate.domain.translate.TranslateException

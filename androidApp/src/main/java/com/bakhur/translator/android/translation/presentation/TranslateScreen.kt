@@ -7,15 +7,28 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.FabPosition
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,10 +36,13 @@ import com.bakhur.translator.android.R
 import com.bakhur.translator.android.core.theme.TranslatorTheme
 import com.bakhur.translator.android.translation.presentation.components.LanguageDropDown
 import com.bakhur.translator.android.translation.presentation.components.SwapLanguagesButton
+import com.bakhur.translator.android.translation.presentation.components.TranslateHistoryItem
 import com.bakhur.translator.android.translation.presentation.components.TranslateTextField
 import com.bakhur.translator.android.translation.presentation.components.rememberTextToSpeech
+import com.bakhur.translator.translate.domain.translate.TranslateError
 import com.bakhur.translator.translate.presentation.TranslateEvent
 import com.bakhur.translator.translate.presentation.TranslateState
+import com.bakhur.translator.translate.presentation.UiHistoryItem
 import java.util.Locale
 
 @Composable
@@ -35,19 +51,51 @@ fun TranslateScreen(
     onEvent: (TranslateEvent) -> Unit
 ) {
     val context = LocalContext.current
+    LaunchedEffect(key1 = state.error) {
+        val message = when (state.error) {
+            TranslateError.SERVICE_UNAVAILABLE -> context.getString(R.string.error_service_unavailable)
+            TranslateError.CLIENT_ERROR -> context.getString(R.string.error_client)
+            TranslateError.SERVER_ERROR -> context.getString(R.string.error_server)
+            TranslateError.UNKNOWN_ERROR -> context.getString(R.string.error_unknown)
+            null -> null
+        }
+
+        message?.let {
+            Toast.makeText(context, it, Toast.LENGTH_LONG).show()
+            onEvent(TranslateEvent.OnErrorSeen)
+        }
+    }
 
     Scaffold(
         floatingActionButton = {
-
-        }
+            FloatingActionButton(
+                modifier = Modifier.size(75.dp),
+                onClick = {
+                    onEvent(TranslateEvent.RecordAudio)
+                },
+                shape = RoundedCornerShape(100f),
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary
+            ) {
+                Icon(
+                    imageVector = ImageVector.vectorResource(id = R.drawable.mic),
+                    contentDescription = stringResource(id = R.string.record_audio)
+                )
+            }
+        },
+        floatingActionButtonPosition = FabPosition.Center
     ) { paddingValues ->
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .padding(16.dp),
+                .padding(start = 16.dp, top = 0.dp, end = 16.dp, bottom = 0.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            item {
+                Spacer(modifier = Modifier.height(16.dp))
+            }
+
             item {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -141,6 +189,32 @@ fun TranslateScreen(
                         onEvent(TranslateEvent.EditTranslation)
                     }
                 )
+            }
+
+            item {
+                if (state.history.isNotEmpty()) {
+                    Text(
+                        text = stringResource(id = R.string.history),
+                        style = MaterialTheme.typography.headlineSmall
+                    )
+                }
+            }
+
+            items(
+                key = { it.id },
+                items = state.history
+            ) { item: UiHistoryItem ->
+                TranslateHistoryItem(
+                    modifier = Modifier.fillMaxWidth(),
+                    uiHistoryItem = item,
+                    onClick = {
+                        onEvent(TranslateEvent.SelectHistoryItem(item))
+                    }
+                )
+            }
+
+            item {
+                Spacer(modifier = Modifier.height(16.dp))
             }
         }
     }
