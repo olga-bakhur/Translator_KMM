@@ -8,4 +8,5 @@ object Routes {
 
 object NavArguments {
     const val LANGUAGE_CODE = "languageCode"
+    const val VOICE_RESULT = "voice_result"
 }

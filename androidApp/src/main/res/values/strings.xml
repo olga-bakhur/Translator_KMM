@@ -9,8 +9,17 @@
     <string name="from_text_input_field">From text input field</string>
     <string name="copy">Copy</string>
     <string name="play_loud">Play loud</string>
-    <string name="coppied_to_clipboard">Text coppied to clipboard</string>
+    <string name="copied_to_clipboard">Text copied to clipboard</string>
     <string name="history">History</string>
+    <string name="accept_recording_result">Accept recording result</string>
+    <string name="stop_recording">Stop recording</string>
+    <string name="apply">Apply</string>
+    <string name="record_again">Record again</string>
+    <string name="listening">Listening...</string>
+    <string name="listening_state">Listening state</string>
+    <string name="start_talking">Click Record and start talking</string>
+
+    <!--    Errors-->
     <string name="error_service_unavailable">Oops, an error happened. Please try again later.</string>
     <string name="error_client">Oops, an error happened. Please, contact the support.</string>
     <string name="error_server">Oops, an error happened. Please, try again later.</string>

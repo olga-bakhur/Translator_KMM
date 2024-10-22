@@ -169,7 +169,7 @@ fun TranslateScreen(
                         )
                         Toast.makeText(
                             context,
-                            context.getString(R.string.coppied_to_clipboard),
+                            context.getString(R.string.copied_to_clipboard),
                             Toast.LENGTH_LONG
                         ).show()
                     },
