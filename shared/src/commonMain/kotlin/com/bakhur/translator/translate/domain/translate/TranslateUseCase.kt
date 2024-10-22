@@ -6,7 +6,7 @@ import com.bakhur.translator.translate.domain.history.HistoryDataSource
 import com.bakhur.translator.translate.domain.history.HistoryItem
 
 class TranslateUseCase(
-    private val client: TranslateClient,
+    private val translateClient: TranslateClient,
     private val historyDataSource: HistoryDataSource
 ) {
 
@@ -16,7 +16,7 @@ class TranslateUseCase(
         fromText: String
     ): Resource<String> =
         try {
-            val translatedText = client.translate(
+            val translatedText = translateClient.translate(
                 fromLanguage = fromLanguage,
                 toLanguage = toLanguage,
                 fromText = fromText

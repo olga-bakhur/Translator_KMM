@@ -2,7 +2,7 @@ package com.bakhur.translator.translate.presentation
 
 import com.bakhur.translator.core.presentation.UiLanguage
 
-class UiHistoryItem(
+data class UiHistoryItem(
     val id: Long,
     val fromLanguage: UiLanguage,
     val toLanguage: UiLanguage,
