@@ -42,7 +42,7 @@ import androidx.compose.ui.unit.dp
 import com.bakhur.translator.android.R
 import com.bakhur.translator.android.core.theme.LightBlue
 import com.bakhur.translator.android.core.theme.TranslatorTheme
-import com.bakhur.translator.translate.NetworkConstants.DEFAULT_FROM_LANGUAGE
+import com.bakhur.translator.translation.NetworkConstants.DEFAULT_FROM_LANGUAGE
 import com.bakhur.translator.voice_to_text.presentation.DisplayState
 import com.bakhur.translator.voice_to_text.presentation.VoiceToTextEvent
 import com.bakhur.translator.voice_to_text.presentation.VoiceToTextState

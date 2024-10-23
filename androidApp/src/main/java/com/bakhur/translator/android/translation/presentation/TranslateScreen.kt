@@ -39,10 +39,10 @@ import com.bakhur.translator.android.translation.presentation.components.SwapLan
 import com.bakhur.translator.android.translation.presentation.components.TranslateHistoryItem
 import com.bakhur.translator.android.translation.presentation.components.TranslateTextField
 import com.bakhur.translator.android.translation.presentation.components.rememberTextToSpeech
-import com.bakhur.translator.translate.domain.translate.TranslateError
-import com.bakhur.translator.translate.presentation.TranslateEvent
-import com.bakhur.translator.translate.presentation.TranslateState
-import com.bakhur.translator.translate.presentation.UiHistoryItem
+import com.bakhur.translator.translation.domain.translate.TranslateError
+import com.bakhur.translator.translation.presentation.TranslateEvent
+import com.bakhur.translator.translation.presentation.TranslateState
+import com.bakhur.translator.translation.presentation.UiHistoryItem
 import java.util.Locale
 
 @Composable

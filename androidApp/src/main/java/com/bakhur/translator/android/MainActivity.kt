@@ -27,8 +27,8 @@ import com.bakhur.translator.android.translation.presentation.AndroidTranslateVi
 import com.bakhur.translator.android.translation.presentation.TranslateScreen
 import com.bakhur.translator.android.voice_to_text.presentation.AndroidVoiceToTextViewModel
 import com.bakhur.translator.android.voice_to_text.presentation.components.VoiceToTextScreen
-import com.bakhur.translator.translate.NetworkConstants.DEFAULT_FROM_LANGUAGE
-import com.bakhur.translator.translate.presentation.TranslateEvent
+import com.bakhur.translator.translation.NetworkConstants.DEFAULT_FROM_LANGUAGE
+import com.bakhur.translator.translation.presentation.TranslateEvent
 import com.bakhur.translator.voice_to_text.presentation.VoiceToTextEvent
 import dagger.hilt.android.AndroidEntryPoint
 
