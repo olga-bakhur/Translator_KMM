@@ -18,6 +18,9 @@ kotlin = "2.0.20"
 # Ksp
 ksp = "2.0.20-1.0.24"
 
+# buildConfig
+buildConfig = "4.1.1"
+
 # Compose
 activityCompose = "1.9.3"
 compose = "1.7.4"
@@ -30,7 +33,7 @@ composeNavigation = "2.8.3"
 lifecycleViewmodelAndroid = "2.8.6"
 
 # Coil
-coilCompose = "2.1.0"
+coil3 = "3.0.0-alpha06"
 
 # Hilt
 hilt = "2.52"
@@ -38,6 +41,9 @@ hiltNavigationCompose = "1.2.0"
 
 # Ktor
 ktor = "2.3.12"
+
+# Ktorfit
+ktorfit = "2.1.0"
 
 # Ktor logging
 slf4j = "2.1.0-alpha1"
@@ -57,9 +63,6 @@ testRunner = "1.6.2"
 rules = "1.6.1"
 
 [libraries]
-# Kotlin
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-
 # Compose
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -76,7 +79,10 @@ compose-navigation = { module = "androidx.navigation:navigation-compose", versio
 androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
 
 # Coil
-coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3" }
+coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil3" }
+coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
 
 # Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
@@ -90,8 +96,15 @@ ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 ktor-client-ios = { module = "io.ktor:ktor-client-ios", version.ref = "ktor" }
 ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 
-# Logging
+# Ktorfit
+ktorfit = { module = "de.jensklingenberg.ktorfit:ktorfit-lib", version.ref = "ktorfit" }
+ktorfit-converters-response = { module = "de.jensklingenberg.ktorfit:ktorfit-converters-response", version.ref = "ktorfit" }
+ktorfit-converters-call = { module = "de.jensklingenberg.ktorfit:ktorfit-converters-call", version.ref = "ktorfit" }
+ktorfit-converters-flow = { module = "de.jensklingenberg.ktorfit:ktorfit-converters-flow", version.ref = "ktorfit" }
+
+# Ktor logging
 slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
 slf4j-android = { module = "org.slf4j:slf4j-android", version.ref = "slf4jAndroid" }
@@ -106,6 +119,7 @@ sqlDelight-runtime = { module = "app.cash.sqldelight:runtime", version.ref = "sq
 dateTime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "dateTime" }
 
 # Testing
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 assertK = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertK" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 jUnit = { module = "junit:junit", version.ref = "jUnit" }
@@ -124,9 +138,11 @@ kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = 
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+ktorfit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
 sqlDelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+buildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildConfig" }
 
 [bundles]
 ktor = [

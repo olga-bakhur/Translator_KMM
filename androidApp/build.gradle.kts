@@ -59,7 +59,11 @@ dependencies {
     implementation(libs.compose.icons.extended)
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.navigation)
+
+    implementation(libs.coil.compose.core)
     implementation(libs.coil.compose)
+    implementation(libs.coil.mp)
+    implementation(libs.coil.network.ktor)
 
     implementation(libs.androidx.lifecycle.viewmodel.android)
 

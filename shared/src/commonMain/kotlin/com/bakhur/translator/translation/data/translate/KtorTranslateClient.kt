@@ -1,7 +1,7 @@
 package com.bakhur.translator.translation.data.translate
 
+import Translator.shared.BuildConfig
 import com.bakhur.translator.core.domain.language.Language
-import com.bakhur.translator.translation.NetworkConstants
 import com.bakhur.translator.translation.domain.translate.TranslateClient
 import com.bakhur.translator.translation.domain.translate.TranslateError
 import com.bakhur.translator.translation.domain.translate.TranslateException
@@ -25,7 +25,7 @@ class KtorTranslateClient(
     ): String {
         val result = try {
             httpClient.post {
-                url(NetworkConstants.BASE_URL + "/translate")
+                url(BuildConfig.BASE_URL + "/translate")
                 contentType(ContentType.Application.Json)
                 setBody(
                     TranslateDto(
