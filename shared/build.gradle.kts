@@ -19,8 +19,8 @@ kotlin {
     cocoapods {
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"
-        version = "1.0"
-        ios.deploymentTarget = "16.0"
+        version = libs.versions.ios.appVersion.get().toString()
+        ios.deploymentTarget = libs.versions.ios.deploymentTarget.get().toString()
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "shared"
@@ -57,10 +57,10 @@ kotlin {
 }
 
 android {
-    namespace = "com.bakhur.translator"
-    compileSdk = 35
+    namespace = libs.versions.shared.namespace.get().toString()
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
-        minSdk = 28
+        minSdk = libs.versions.android.minSdk.get().toInt()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

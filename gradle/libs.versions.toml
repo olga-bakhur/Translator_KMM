@@ -1,5 +1,16 @@
 [versions]
 agp = "8.6.1"
+android-compileSdk = "35"
+android-minSdk = "28"
+android-targetSdk = "35"
+android-versionCode = "1"
+android-versionName = "1.0"
+android-applicationId = "com.bakhur.translator.android"
+
+ios-appVersion = "1.0"
+ios-deploymentTarget = "16.0"
+
+shared-namespace = "com.bakhur.translator"
 
 # Kotlin
 kotlin = "2.0.20"

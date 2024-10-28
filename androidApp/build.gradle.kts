@@ -9,14 +9,15 @@ plugins {
 }
 
 android {
-    namespace = "com.bakhur.translator.android"
-    compileSdk = 35
+    namespace = libs.versions.android.applicationId.get().toString()
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
+
     defaultConfig {
-        applicationId = "com.bakhur.translator.android"
-        minSdk = 28
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = libs.versions.android.applicationId.get().toString()
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
+        versionCode = libs.versions.android.versionCode.get().toInt()
+        versionName = libs.versions.android.versionName.get().toString()
 
         testInstrumentationRunner = "com.bakhur.translator.TranslateAppTest"
     }
