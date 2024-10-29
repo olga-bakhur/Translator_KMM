@@ -1,6 +1,6 @@
 package com.bakhur.translator.voice_to_text.presentation
 
-import com.bakhur.translator.EMPTY
+import com.bakhur.translator.core.util.EMPTY
 
 data class VoiceToTextState(
     val powerRatios: List<Float> = emptyList(),

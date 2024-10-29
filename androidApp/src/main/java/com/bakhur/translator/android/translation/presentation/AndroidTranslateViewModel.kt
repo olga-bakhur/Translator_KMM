@@ -2,8 +2,8 @@ package com.bakhur.translator.android.translation.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bakhur.translator.translation.domain.history.HistoryDataSource
-import com.bakhur.translator.translation.domain.translate.TranslateUseCase
+import com.bakhur.translator.translation.domain.repository.history.HistoryDataSource
+import com.bakhur.translator.translation.domain.usecase.TranslateUseCase
 import com.bakhur.translator.translation.presentation.TranslateEvent
 import com.bakhur.translator.translation.presentation.TranslateViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -1,6 +1,7 @@
 package com.bakhur.translator.translation.presentation
 
 import com.bakhur.translator.core.presentation.UiLanguage
+import com.bakhur.translator.translation.presentation.model.UiHistoryItem
 
 sealed class TranslateEvent {
 

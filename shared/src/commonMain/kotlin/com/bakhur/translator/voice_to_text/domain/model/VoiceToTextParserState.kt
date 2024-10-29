@@ -1,6 +1,6 @@
-package com.bakhur.translator.voice_to_text.domain
+package com.bakhur.translator.voice_to_text.domain.model
 
-import com.bakhur.translator.EMPTY
+import com.bakhur.translator.core.util.EMPTY
 
 data class VoiceToTextParserState(
     val result: String = EMPTY,

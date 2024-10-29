@@ -1,4 +1,4 @@
-package com.bakhur.translator.translation.domain.translate
+package com.bakhur.translator.translation.domain.model.translate
 
 enum class TranslateError {
     SERVICE_UNAVAILABLE,

@@ -1,9 +1,11 @@
-package com.bakhur.translator.translation.domain.translate
+package com.bakhur.translator.translation.domain.usecase
 
 import com.bakhur.translator.core.domain.language.Language
 import com.bakhur.translator.core.domain.util.Resource
-import com.bakhur.translator.translation.domain.history.HistoryDataSource
-import com.bakhur.translator.translation.domain.history.HistoryItem
+import com.bakhur.translator.translation.domain.model.history.HistoryItem
+import com.bakhur.translator.translation.domain.model.translate.TranslateException
+import com.bakhur.translator.translation.domain.repository.history.HistoryDataSource
+import com.bakhur.translator.translation.domain.repository.translate.TranslateClient
 
 class TranslateUseCase(
     private val translateClient: TranslateClient,

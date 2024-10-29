@@ -2,7 +2,7 @@ package com.bakhur.translator.android.voice_to_text.di
 
 import android.app.Application
 import com.bakhur.translator.android.voice_to_text.AndroidVoiceToTextParser
-import com.bakhur.translator.voice_to_text.domain.VoiceToTextParser
+import com.bakhur.translator.voice_to_text.domain.repository.VoiceToTextParser
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

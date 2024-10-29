@@ -1,4 +1,4 @@
-package com.bakhur.translator.translation
+package com.bakhur.translator.translation.presentation.util
 
 object NetworkConstants {
     const val DEFAULT_FROM_LANGUAGE = "en"

@@ -1,6 +1,6 @@
 package com.bakhur.translator.translation.data.mapper.history
 
-import com.bakhur.translator.translation.domain.history.HistoryItem
+import com.bakhur.translator.translation.domain.model.history.HistoryItem
 import database.HistoryEntity
 
 fun HistoryEntity.toHistoryItem(): HistoryItem =

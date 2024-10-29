@@ -1,12 +1,13 @@
 package com.bakhur.translator.translation.presentation
 
-import com.bakhur.translator.EMPTY
 import com.bakhur.translator.core.domain.util.Resource
 import com.bakhur.translator.core.domain.util.toCommonStateFlow
 import com.bakhur.translator.core.presentation.UiLanguage
-import com.bakhur.translator.translation.domain.history.HistoryDataSource
-import com.bakhur.translator.translation.domain.translate.TranslateException
-import com.bakhur.translator.translation.domain.translate.TranslateUseCase
+import com.bakhur.translator.core.util.EMPTY
+import com.bakhur.translator.translation.domain.model.translate.TranslateException
+import com.bakhur.translator.translation.domain.repository.history.HistoryDataSource
+import com.bakhur.translator.translation.domain.usecase.TranslateUseCase
+import com.bakhur.translator.translation.presentation.model.UiHistoryItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO

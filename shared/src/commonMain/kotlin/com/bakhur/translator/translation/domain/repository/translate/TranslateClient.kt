@@ -1,4 +1,4 @@
-package com.bakhur.translator.translation.domain.translate
+package com.bakhur.translator.translation.domain.repository.translate
 
 import com.bakhur.translator.core.domain.language.Language
 

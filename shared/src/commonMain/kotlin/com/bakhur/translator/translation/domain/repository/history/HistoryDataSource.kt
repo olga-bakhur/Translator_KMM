@@ -1,6 +1,7 @@
-package com.bakhur.translator.translation.domain.history
+package com.bakhur.translator.translation.domain.repository.history
 
 import com.bakhur.translator.core.domain.util.CommonFlow
+import com.bakhur.translator.translation.domain.model.history.HistoryItem
 import kotlin.coroutines.CoroutineContext
 
 interface HistoryDataSource {

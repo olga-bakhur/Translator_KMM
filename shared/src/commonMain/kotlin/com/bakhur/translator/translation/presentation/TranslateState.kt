@@ -1,10 +1,11 @@
 package com.bakhur.translator.translation.presentation
 
-import com.bakhur.translator.EMPTY
 import com.bakhur.translator.core.presentation.UiLanguage
-import com.bakhur.translator.translation.NetworkConstants.DEFAULT_FROM_LANGUAGE
-import com.bakhur.translator.translation.NetworkConstants.DEFAULT_TO_LANGUAGE
-import com.bakhur.translator.translation.domain.translate.TranslateError
+import com.bakhur.translator.core.util.EMPTY
+import com.bakhur.translator.translation.domain.model.translate.TranslateError
+import com.bakhur.translator.translation.presentation.model.UiHistoryItem
+import com.bakhur.translator.translation.presentation.util.NetworkConstants.DEFAULT_FROM_LANGUAGE
+import com.bakhur.translator.translation.presentation.util.NetworkConstants.DEFAULT_TO_LANGUAGE
 
 data class TranslateState(
     val fromText: String = EMPTY,

@@ -1,4 +1,4 @@
-package com.bakhur.translator.translation.presentation
+package com.bakhur.translator.translation.presentation.model
 
 import com.bakhur.translator.core.presentation.UiLanguage
 

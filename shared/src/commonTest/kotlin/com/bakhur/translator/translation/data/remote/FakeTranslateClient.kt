@@ -1,7 +1,7 @@
 package com.bakhur.translator.translation.data.remote
 
 import com.bakhur.translator.core.domain.language.Language
-import com.bakhur.translator.translation.domain.translate.TranslateClient
+import com.bakhur.translator.translation.domain.repository.translate.TranslateClient
 
 class FakeTranslateClient : TranslateClient {
 

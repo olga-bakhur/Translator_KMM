@@ -4,8 +4,9 @@ import app.cash.turbine.test
 import com.bakhur.translator.core.presentation.UiLanguage
 import com.bakhur.translator.translation.data.local.FakeHistoryDataSource
 import com.bakhur.translator.translation.data.remote.FakeTranslateClient
-import com.bakhur.translator.translation.domain.history.HistoryItem
-import com.bakhur.translator.translation.domain.translate.TranslateUseCase
+import com.bakhur.translator.translation.domain.model.history.HistoryItem
+import com.bakhur.translator.translation.domain.usecase.TranslateUseCase
+import com.bakhur.translator.translation.presentation.model.UiHistoryItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking

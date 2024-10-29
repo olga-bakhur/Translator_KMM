@@ -6,10 +6,10 @@ import com.bakhur.translator.database.TranslateDatabase
 import com.bakhur.translator.translation.data.repository.history.SqlDelightHistoryDataSource
 import com.bakhur.translator.translation.data.source.local.DatabaseDriverFactory
 import com.bakhur.translator.translation.data.source.remote.HttpClientFactory
-import com.bakhur.translator.translation.data.translate.KtorTranslateClient
-import com.bakhur.translator.translation.domain.history.HistoryDataSource
-import com.bakhur.translator.translation.domain.translate.TranslateClient
-import com.bakhur.translator.translation.domain.translate.TranslateUseCase
+import com.bakhur.translator.translation.data.repository.translate.KtorTranslateClient
+import com.bakhur.translator.translation.domain.repository.history.HistoryDataSource
+import com.bakhur.translator.translation.domain.repository.translate.TranslateClient
+import com.bakhur.translator.translation.domain.usecase.TranslateUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

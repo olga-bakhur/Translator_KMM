@@ -1,7 +1,7 @@
 package com.bakhur.translator.voice_to_text.presentation
 
 import com.bakhur.translator.core.domain.util.toCommonStateFlow
-import com.bakhur.translator.voice_to_text.domain.VoiceToTextParser
+import com.bakhur.translator.voice_to_text.domain.repository.VoiceToTextParser
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

@@ -14,9 +14,9 @@ import com.bakhur.translator.android.R
 import com.bakhur.translator.android.di.AppModule
 import com.bakhur.translator.android.voice_to_text.di.VoiceToTextModule
 import com.bakhur.translator.translation.data.remote.FakeTranslateClient
-import com.bakhur.translator.translation.domain.translate.TranslateClient
+import com.bakhur.translator.translation.domain.repository.translate.TranslateClient
 import com.bakhur.translator.voice_to_text.data.FakeVoiceToTextParser
-import com.bakhur.translator.voice_to_text.domain.VoiceToTextParser
+import com.bakhur.translator.voice_to_text.domain.repository.VoiceToTextParser
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import dagger.hilt.android.testing.UninstallModules

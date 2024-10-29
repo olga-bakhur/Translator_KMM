@@ -1,12 +1,12 @@
-package com.bakhur.translator.translation.data.translate
+package com.bakhur.translator.translation.data.repository.translate
 
 import Translator.shared.BuildConfig
 import com.bakhur.translator.core.domain.language.Language
 import com.bakhur.translator.translation.data.model.translate.TranslateRequest
 import com.bakhur.translator.translation.data.model.translate.TranslateResponse
-import com.bakhur.translator.translation.domain.translate.TranslateClient
-import com.bakhur.translator.translation.domain.translate.TranslateError
-import com.bakhur.translator.translation.domain.translate.TranslateException
+import com.bakhur.translator.translation.domain.model.translate.TranslateError
+import com.bakhur.translator.translation.domain.model.translate.TranslateException
+import com.bakhur.translator.translation.domain.repository.translate.TranslateClient
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.post

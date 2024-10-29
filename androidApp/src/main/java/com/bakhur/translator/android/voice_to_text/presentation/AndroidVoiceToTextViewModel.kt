@@ -2,7 +2,7 @@ package com.bakhur.translator.android.voice_to_text.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bakhur.translator.voice_to_text.domain.VoiceToTextParser
+import com.bakhur.translator.voice_to_text.domain.repository.VoiceToTextParser
 import com.bakhur.translator.voice_to_text.presentation.VoiceToTextEvent
 import com.bakhur.translator.voice_to_text.presentation.VoiceToTextViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

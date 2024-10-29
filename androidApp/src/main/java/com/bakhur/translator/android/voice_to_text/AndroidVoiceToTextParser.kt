@@ -10,8 +10,8 @@ import android.speech.SpeechRecognizer.ERROR_CLIENT
 import com.bakhur.translator.android.R
 import com.bakhur.translator.core.domain.util.CommonStateFlow
 import com.bakhur.translator.core.domain.util.toCommonMutableStateFlow
-import com.bakhur.translator.voice_to_text.domain.VoiceToTextParser
-import com.bakhur.translator.voice_to_text.domain.VoiceToTextParserState
+import com.bakhur.translator.voice_to_text.domain.model.VoiceToTextParserState
+import com.bakhur.translator.voice_to_text.domain.repository.VoiceToTextParser
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 
