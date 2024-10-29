@@ -2,6 +2,8 @@ package com.bakhur.translator.translation.data.translate
 
 import Translator.shared.BuildConfig
 import com.bakhur.translator.core.domain.language.Language
+import com.bakhur.translator.translation.data.model.translate.TranslateRequest
+import com.bakhur.translator.translation.data.model.translate.TranslateResponse
 import com.bakhur.translator.translation.domain.translate.TranslateClient
 import com.bakhur.translator.translation.domain.translate.TranslateError
 import com.bakhur.translator.translation.domain.translate.TranslateException
@@ -28,7 +30,7 @@ class KtorTranslateClient(
                 url(BuildConfig.BASE_URL + "/translate")
                 contentType(ContentType.Application.Json)
                 setBody(
-                    TranslateDto(
+                    TranslateRequest(
                         textToTranslate = fromText,
                         sourceLanguageCode = fromLanguage.langCode,
                         targetLanguageCode = toLanguage.langCode
@@ -48,7 +50,7 @@ class KtorTranslateClient(
         }
 
         return try {
-            result.body<TranslatedDto>().translatedText
+            result.body<TranslateResponse>().translatedText
         } catch (e: Exception) {
             throw TranslateException(TranslateError.SERVER_ERROR)
         }
