@@ -1,4 +1,4 @@
-package com.bakhur.translator.translation.data.remote
+package com.bakhur.translator.translation.data.source.remote
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android

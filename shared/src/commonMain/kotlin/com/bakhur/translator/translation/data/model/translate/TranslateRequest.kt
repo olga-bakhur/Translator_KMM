@@ -1,10 +1,10 @@
-package com.bakhur.translator.translation.data.translate
+package com.bakhur.translator.translation.data.model.translate
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class TranslateDto(
+data class TranslateRequest(
     @SerialName("q") val textToTranslate: String,
     @SerialName("source") val sourceLanguageCode: String,
     @SerialName("target") val targetLanguageCode: String

@@ -1,4 +1,4 @@
-package com.bakhur.translator.translation.data.local
+package com.bakhur.translator.translation.data.source.local
 
 import android.content.Context
 import app.cash.sqldelight.db.SqlDriver

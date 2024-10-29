@@ -1,10 +1,11 @@
-package com.bakhur.translator.translation.data.history
+package com.bakhur.translator.translation.data.repository.history
 
 import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToList
 import com.bakhur.translator.core.domain.util.CommonFlow
 import com.bakhur.translator.core.domain.util.toCommonFlow
 import com.bakhur.translator.database.TranslateDatabase
+import com.bakhur.translator.translation.data.mapper.history.toHistoryItem
 import com.bakhur.translator.translation.domain.history.HistoryDataSource
 import com.bakhur.translator.translation.domain.history.HistoryItem
 import kotlinx.coroutines.flow.map

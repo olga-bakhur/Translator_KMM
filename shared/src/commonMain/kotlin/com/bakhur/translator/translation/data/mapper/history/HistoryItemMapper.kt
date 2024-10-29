@@ -1,4 +1,4 @@
-package com.bakhur.translator.translation.data.history
+package com.bakhur.translator.translation.data.mapper.history
 
 import com.bakhur.translator.translation.domain.history.HistoryItem
 import database.HistoryEntity

@@ -1,4 +1,4 @@
-package com.bakhur.translator.translation.data.local
+package com.bakhur.translator.translation.data.source.local
 
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.native.NativeSqliteDriver
