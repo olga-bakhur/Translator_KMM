@@ -17,7 +17,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bakhur.translator.android.core.theme.TranslatorTheme
+import com.bakhur.translator.android.core.presentation.theme.TranslatorTheme
 import com.bakhur.translator.android.translation.presentation.components.gradientSurface
 import kotlin.random.Random
 

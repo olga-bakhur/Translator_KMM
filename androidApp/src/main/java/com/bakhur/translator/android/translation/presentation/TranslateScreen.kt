@@ -33,7 +33,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bakhur.translator.android.R
-import com.bakhur.translator.android.core.theme.TranslatorTheme
+import com.bakhur.translator.android.core.presentation.theme.TranslatorTheme
 import com.bakhur.translator.android.translation.presentation.components.LanguageDropDown
 import com.bakhur.translator.android.translation.presentation.components.SwapLanguagesButton
 import com.bakhur.translator.android.translation.presentation.components.TranslateHistoryItem

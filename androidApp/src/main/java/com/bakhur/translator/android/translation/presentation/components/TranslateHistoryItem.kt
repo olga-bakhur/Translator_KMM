@@ -18,7 +18,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.bakhur.translator.android.core.theme.LightBlue
+import com.bakhur.translator.android.core.presentation.theme.LightBlue
 import com.bakhur.translator.translation.presentation.model.UiHistoryItem
 
 @Composable

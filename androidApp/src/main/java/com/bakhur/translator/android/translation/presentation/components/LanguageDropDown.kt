@@ -21,7 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.bakhur.translator.android.R
-import com.bakhur.translator.android.core.theme.LightBlue
+import com.bakhur.translator.android.core.presentation.theme.LightBlue
 import com.bakhur.translator.core.presentation.UiLanguage
 
 @Composable

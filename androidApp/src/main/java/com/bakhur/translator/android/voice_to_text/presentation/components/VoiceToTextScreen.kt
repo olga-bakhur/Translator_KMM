@@ -40,8 +40,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bakhur.translator.android.R
-import com.bakhur.translator.android.core.theme.LightBlue
-import com.bakhur.translator.android.core.theme.TranslatorTheme
+import com.bakhur.translator.android.core.presentation.theme.LightBlue
+import com.bakhur.translator.android.core.presentation.theme.TranslatorTheme
 import com.bakhur.translator.translation.presentation.util.NetworkConstants.DEFAULT_FROM_LANGUAGE
 import com.bakhur.translator.voice_to_text.presentation.DisplayState
 import com.bakhur.translator.voice_to_text.presentation.VoiceToTextEvent

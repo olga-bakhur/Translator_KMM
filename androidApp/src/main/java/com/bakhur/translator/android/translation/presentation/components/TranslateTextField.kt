@@ -37,7 +37,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.bakhur.translator.android.R
-import com.bakhur.translator.android.core.theme.LightBlue
+import com.bakhur.translator.android.core.presentation.theme.LightBlue
 import com.bakhur.translator.core.presentation.UiLanguage
 
 @Composable

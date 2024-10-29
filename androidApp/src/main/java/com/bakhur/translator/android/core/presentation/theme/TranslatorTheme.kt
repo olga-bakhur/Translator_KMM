@@ -1,4 +1,4 @@
-package com.bakhur.translator.android.core.theme
+package com.bakhur.translator.android.core.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,7 +21,7 @@ fun TranslatorTheme(
 ) {
     val colors = if (darkTheme) darkColors else lightColors
 
-    val SfProText = FontFamily(
+    val sfProText = FontFamily(
         Font(
             resId = R.font.sf_pro_text_regular,
             weight = FontWeight.Normal
@@ -38,27 +38,27 @@ fun TranslatorTheme(
 
     val typography = Typography(
         headlineSmall = TextStyle(
-            fontFamily = SfProText,
+            fontFamily = sfProText,
             fontWeight = FontWeight.Medium,
             fontSize = 18.sp
         ),
         headlineMedium = TextStyle(
-            fontFamily = SfProText,
+            fontFamily = sfProText,
             fontWeight = FontWeight.Bold,
             fontSize = 24.sp
         ),
         headlineLarge = TextStyle(
-            fontFamily = SfProText,
+            fontFamily = sfProText,
             fontWeight = FontWeight.Bold,
             fontSize = 30.sp
         ),
         bodySmall = TextStyle(
-            fontFamily = SfProText,
+            fontFamily = sfProText,
             fontWeight = FontWeight.Normal,
             fontSize = 12.sp
         ),
         bodyMedium = TextStyle(
-            fontFamily = SfProText,
+            fontFamily = sfProText,
             fontWeight = FontWeight.Normal,
             fontSize = 14.sp
         )
